@@ -1,5 +1,4 @@
 from aiogram import Bot
+import config
 
-from config import config
-
-bot = Bot(token=config.bot_token.get_secret_value())
+bot = Bot(token=config.BOT_TOKEN)
