@@ -4,19 +4,20 @@ import logging
 from aiogram import Bot, Dispatcher
 
 import config
-from handlers import choose, invoice_user, back, claim_user
+from handlers import claim, invoice, back, call, call_admin, start
 
 
 async def main():
     logging.basicConfig(level=logging.INFO)
     bot = Bot(token=config.BOT_TOKEN)
-    dp = Dispatcher()
-
+    dp = Dispatcher() 
     dp.include_routers(
-        choose.router,
+        start.router,
         back.router,
-        invoice_user.router,
-        claim_user.router
+        invoice.router,
+        claim.router,    
+        call.router,
+        call_admin.router
         )
     await dp.start_polling(bot)
 

@@ -1,6 +1,6 @@
 from aiogram import Router, F, types
 
-from handlers.choose import cmd_start
+from handlers.start import cmd_start
 
 router = Router()
 
